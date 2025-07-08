@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rails Angular Sanitize</title>
+    <%= csrf_meta_tags %>
+
+    <base href='/'>
+
+    <% if @url %>
+      <script type="text/javascript">
+        window.__url__ = '<%= @url.html_safe %>';
+      </script>
+    <% end %>
+
+    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_link_tag "https://hunter2labs.s3.amazonaws.com/common.css" %>
+    <%= javascript_include_tag "https://hunter2labs.s3.amazonaws.com/common.js" %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
